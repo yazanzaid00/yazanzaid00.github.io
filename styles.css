@@ -1,0 +1,121 @@
+:root {
+  --font-family: Arial;
+  --light-bg: #f7f7f7;
+  --dark-bg: #333;
+  --light-text: #333;
+  --dark-text: #f7f7f7;
+  --light-card-bg: #fff;
+  --dark-card-bg: #333;
+  --box-shadow: rgba(0, 0, 0, 0.2);
+  --border-color: #ccc;
+  --light-link: #333;
+  --dark-link: #fff;
+  --link-hover: #007bff;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--light-bg);
+  color: var(--light-text);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.profile-card {
+  background-color: var(--light-card-bg);
+  padding: 16px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px var(--box-shadow);
+  text-align:center;
+}
+
+.profile-picture {
+width:150px;
+height:150px;
+}
+
+.profile-name, .typing-animation,
+.resume-section-title, .resume-item-title,
+.resume-item-certificate, .year-rectangle {
+margin-top:5px;
+font-size:18px;
+font-weight:bold;
+}
+
+.resume-section-title, .resume-item, .year-rectangle {
+border-bottom:1px solid var(--border-color);
+padding-bottom:10px;
+margin-bottom:10px;
+}
+
+
+.year-rectangle {
+background-color:rgba(0,0,0,0.1);
+padding:5px;
+border-radius:3px;
+display:inline-block;
+}
+
+.social-icons a {
+margin-right:10px;
+color:var(--light-text);
+font-size:18px;
+display:inline-block
+}
+
+.theme-toggle, .theme-toggle:focus {
+position:absolute;
+top:20px;
+right:20px;
+background-color:transparent;
+border:none;
+cursor:pointer;
+outline:none;
+}
+
+@keyframes blink {
+from {opacity :1;}
+to {opacity :0;}
+}
+
+#cursor {
+animation :blink .7s infinite alternate ;
+}
+
+body.dark-theme {
+background-color :var(--dark-bg);
+color :var(--dark-text);
+}
+
+body.dark-theme .profile-card {
+background-color :var(--dark-card-bg);
+}
+
+body a {
+color :var(--light-link);
+}
+
+body a:hover, body.dark-theme a:hover, .social-icons .icon:hover {
+color :var(--link-hover);
+}
+
+.social-icons .icon:hover {
+display:inline-block ;
+}
+
+body.dark-theme a {
+color :var(--dark-link);
+}
+
+noscript #cursor {
+display:none ;
+}
+
+.visually-hidden {
+position:absolute ;
+width :1px ; height :1px ; margin :-1px ; padding :0 ; overflow:hidden ; clip :rect(0,0,0,0) ; border :0 ;
+}
